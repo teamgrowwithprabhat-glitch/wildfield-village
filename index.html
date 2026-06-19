@@ -1029,27 +1029,28 @@
   }
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLB(); });
 
-  // Form handler — submits to Netlify Forms via fetch, keeps visitor on page
+  // Form handler — POSTs directly to the Netlify function, which syncs to Follow Up Boss.
   function handleRegister(ev){
     ev.preventDefault();
     const f = ev.target;
     const name = (f.name && f.name.value) || (f.first && f.first.value) || "there";
-    const data = new URLSearchParams(new FormData(f)).toString();
+    const data = {};
+    new FormData(f).forEach((v,k) => { data[k] = v; });
     const btn = f.querySelector('button[type="submit"]');
     if(btn){ btn.disabled = true; btn.textContent = "Sending…"; }
 
-    fetch("/", {
+    fetch("/.netlify/functions/submission-created", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: data
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ payload: { form_name: f.getAttribute('name'), data: data } })
     })
-    .then(() => {
+    .then((r) => {
+      if(!r.ok) throw new Error('status ' + r.status);
       alert("Thank you, " + name + "! Your VIP registration for Wildfield Village has been received. The Grow With Prabhat Team will contact you shortly to secure your early access.");
       f.reset();
     })
     .catch(() => {
-      alert("Thank you, " + name + "! We've received your request and our team will reach out shortly.");
-      f.reset();
+      alert("Thanks " + name + "! We had trouble submitting automatically — please call or text us at 647-891-3975 and we'll get you VIP access right away.");
     })
     .finally(() => {
       if(btn){ btn.disabled = false; btn.textContent = "Get My VIP Access →"; }

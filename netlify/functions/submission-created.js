@@ -56,6 +56,16 @@ exports.handler = async (event) => {
     return { statusCode: 200, body: 'ignored (not a wildfield form)' };
   }
 
+  // Honeypot — bots fill the hidden bot-field; silently drop them.
+  if (d['bot-field']) {
+    return { statusCode: 200, body: 'ignored (honeypot)' };
+  }
+
+  // Need at least an email or phone for the lead to be useful.
+  if (!d.email && !d.phone) {
+    return { statusCode: 200, body: 'ignored (no contact info)' };
+  }
+
   // --- Normalise names: register form has first/last, hero form has a single name ---
   let firstName = d.first || '';
   let lastName = d.last || '';
