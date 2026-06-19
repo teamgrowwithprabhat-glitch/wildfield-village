@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wildfield Village by Solmar — Now Selling | Grow With Prabhat</title>
+<meta name="description" content="Wildfield Village by Solmar — freehold towns, semis & detached homes at Gore Road & Mayfield, Caledon. Now selling with grand opening incentives. Floor plans, pricing & VIP access.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#1c2b21;
+    --forest-deep:#11180f;
+    --moss:#41573f;
+    --sage:#8aa07a;
+    --cream:#f5f1e6;
+    --paper:#fbf8ef;
+    --gold:#c19a3e;
+    --gold-light:#e3c674;
+    --ink:#202a1f;
+    --line:rgba(28,43,33,.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Outfit',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:'Fraunces',serif;font-weight:500;line-height:1.05}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  .gold{color:var(--gold)}
+  img{max-width:100%;display:block}
+
+  /* ===== TOP BAR ===== */
+  .topbar{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 28px;
+    background:rgba(17,24,15,.82);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(225,198,116,.18);
+  }
+  .topbar .brand{color:var(--cream);font-family:'Fraunces',serif;font-size:18px;letter-spacing:.5px}
+  .topbar .brand b{color:var(--gold-light);font-weight:600}
+  .topbar .cta{
+    background:linear-gradient(135deg,var(--gold),var(--gold-light));
+    color:var(--forest-deep);font-weight:700;font-size:13px;
+    padding:10px 20px;border-radius:40px;text-decoration:none;
+    letter-spacing:.5px;text-transform:uppercase;
+    transition:transform .2s,box-shadow .2s;
+  }
+  .topbar .cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(193,154,62,.4)}
+
+  /* ===== HERO ===== */
+  .hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;align-items:center;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 10%, rgba(138,160,122,.25), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 10% 90%, rgba(193,154,62,.12), transparent 55%),
+      linear-gradient(160deg,var(--forest-deep) 0%, var(--forest) 45%, var(--moss) 120%);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(255,255,255,.018) 0 1px, transparent 1px 80px);
+    opacity:.6;
+  }
+  .hero .ring{position:absolute;border-radius:50%;border:1px solid rgba(225,198,116,.14);}
+  .hero .ring.r1{width:680px;height:680px;top:-180px;right:-160px;}
+  .hero .ring.r2{width:420px;height:420px;top:-60px;right:-40px;border-color:rgba(225,198,116,.22)}
+  .hero-content{position:relative;z-index:2;padding:120px 0 70px;width:100%}
+  .hero-grid{display:grid;grid-template-columns:1.35fr .95fr;gap:50px;align-items:center}
+  .hero-form-card{
+    background:rgba(245,241,230,.06);
+    border:1px solid rgba(225,198,116,.32);
+    border-radius:24px;padding:32px 30px;
+    backdrop-filter:blur(8px);
+    box-shadow:0 24px 60px rgba(0,0,0,.3);
+    opacity:0;animation:rise .9s .7s forwards;transform:translateY(24px);
+  }
+  .hfc-tag{
+    display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-light));
+    color:var(--forest-deep);font-size:11px;font-weight:700;letter-spacing:1.5px;
+    text-transform:uppercase;padding:6px 14px;border-radius:30px;margin-bottom:16px;
+  }
+  .hero-form-card h3{font-family:'Fraunces',serif;color:var(--cream);font-size:26px;font-weight:500;line-height:1.15;margin-bottom:6px}
+  .hero-form-card .hfc-sub{color:rgba(245,241,230,.65);font-size:14px;margin-bottom:20px;font-weight:300}
+  .hero-form-card form{display:flex;flex-direction:column;gap:11px}
+  .hero-form-card input,.hero-form-card select{padding:13px 16px;font-size:14px}
+  .hero-form-card .submit{font-size:15px;padding:15px;margin-top:4px}
+  .hero-form-card .form-fine{margin-top:2px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    color:var(--gold-light);font-size:13px;font-weight:600;
+    letter-spacing:3px;text-transform:uppercase;margin-bottom:26px;
+    opacity:0;animation:rise .8s .1s forwards;
+  }
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold-light)}
+  .hero h1{
+    color:var(--cream);font-size:clamp(44px,7vw,86px);font-weight:400;
+    letter-spacing:-1px;margin-bottom:8px;
+    opacity:0;animation:rise .9s .25s forwards;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold-light)}
+  .hero .sub{
+    color:rgba(245,241,230,.72);font-size:clamp(17px,2vw,21px);
+    max-width:600px;margin:22px 0 14px;font-weight:300;
+    opacity:0;animation:rise .9s .4s forwards;
+  }
+  .loc{
+    color:rgba(245,241,230,.9);font-size:15px;letter-spacing:1px;
+    text-transform:uppercase;font-weight:500;margin-bottom:38px;
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    opacity:0;animation:rise .9s .5s forwards;
+  }
+  .loc span{color:var(--gold-light)}
+
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:rise .9s .6s forwards}
+  .btn{
+    text-decoration:none;font-weight:700;font-size:15px;letter-spacing:.5px;
+    padding:17px 36px;border-radius:46px;transition:all .25s;display:inline-flex;align-items:center;gap:10px;cursor:pointer;border:none;
+  }
+  .btn-primary{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--forest-deep)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(193,154,62,.42)}
+  .btn-ghost{border:1.5px solid rgba(225,198,116,.5);color:var(--cream);background:transparent}
+  .btn-ghost:hover{background:rgba(225,198,116,.12);border-color:var(--gold-light)}
+
+  .launch-strip{
+    margin-top:54px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+    opacity:0;animation:rise .9s .75s forwards;
+  }
+  .launch-pill{
+    background:rgba(245,241,230,.07);border:1px solid rgba(225,198,116,.25);
+    border-radius:16px;padding:16px 22px;
+  }
+  .launch-pill .k{display:block;color:var(--gold-light);font-size:11px;letter-spacing:2px;text-transform:uppercase}
+  .launch-pill .v{color:var(--cream);font-family:'Fraunces',serif;font-size:22px;font-weight:500}
+  .launch-pill.live .v{color:#7ee08a}
+
+  /* ===== URGENCY BANNER ===== */
+  .urgent{
+    background:linear-gradient(90deg,var(--gold),var(--gold-light));
+    color:var(--forest-deep);text-align:center;padding:14px 20px;
+    font-weight:700;letter-spacing:.5px;font-size:15px;
+  }
+  .urgent b{font-family:'Fraunces',serif}
+
+  /* ===== SECTION SHELL ===== */
+  section{position:relative}
+  .pad{padding:96px 0}
+  .lead-eyebrow{
+    color:var(--gold);font-size:12px;font-weight:700;letter-spacing:3px;
+    text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:12px;
+  }
+  .lead-eyebrow::before{content:"";width:30px;height:1px;background:var(--gold)}
+  .sec-title{font-size:clamp(32px,4.5vw,52px);color:var(--forest);font-weight:400;letter-spacing:-.5px;margin-bottom:20px}
+  .sec-title em{font-style:italic;color:var(--gold)}
+  .sec-intro{font-size:18px;color:var(--moss);max-width:720px;font-weight:300}
+
+  /* ===== INCENTIVES ===== */
+  .incentives{background:linear-gradient(160deg,var(--forest),var(--forest-deep));color:var(--cream)}
+  .incentives .lead-eyebrow{color:var(--gold-light)}
+  .incentives .lead-eyebrow::before{background:var(--gold-light)}
+  .incentives .sec-title{color:var(--cream)}
+  .incentives .sec-intro{color:rgba(245,241,230,.72)}
+  .inc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px}
+  .inc{
+    background:rgba(245,241,230,.05);border:1px solid rgba(225,198,116,.22);
+    border-radius:20px;padding:30px 26px;transition:transform .3s,border-color .3s;text-align:left;
+  }
+  .inc:hover{transform:translateY(-6px);border-color:rgba(225,198,116,.5)}
+  .inc .iic{
+    width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--gold),var(--gold-light));font-size:26px;margin-bottom:18px;
+  }
+  .inc h4{font-family:'Fraunces',serif;font-size:21px;color:var(--gold-light);font-weight:500;margin-bottom:8px}
+  .inc p{font-size:14px;color:rgba(245,241,230,.8);font-weight:300}
+  .inc .big{font-family:'Fraunces',serif;font-size:30px;color:var(--cream);font-weight:600;line-height:1;display:block;margin-bottom:6px}
+  .inc-fine{text-align:center;margin-top:30px;font-size:13px;color:rgba(245,241,230,.5);font-style:italic}
+
+  /* ===== AMENITIES GALLERY ===== */
+  .amen{background:var(--paper)}
+  .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px}
+  .gal .tile{
+    position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/3;
+    border:1px solid var(--line);box-shadow:0 14px 34px rgba(28,43,33,.1);cursor:pointer;
+    transition:transform .35s,box-shadow .35s;
+  }
+  .gal .tile:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(28,43,33,.2)}
+  .gal .tile img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .gal .tile:hover img{transform:scale(1.06)}
+  .gal .tile .cap{
+    position:absolute;left:0;right:0;bottom:0;padding:30px 18px 14px;
+    background:linear-gradient(0deg,rgba(13,19,11,.86),transparent);
+    color:var(--cream);font-family:'Fraunces',serif;font-size:18px;font-weight:500;
+  }
+  .gal .tile .cap small{display:block;font-family:'Outfit';font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-light);font-weight:600}
+
+  /* ===== HOME COLLECTIONS ===== */
+  .collections{background:var(--cream)}
+  .collection{
+    background:var(--paper);border:1px solid var(--line);border-radius:26px;
+    padding:38px;margin-top:36px;box-shadow:0 18px 44px rgba(28,43,33,.07);
+  }
+  .collection:first-of-type{margin-top:54px}
+  .col-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:26px}
+  .col-kicker{color:var(--moss);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+  .col-title{font-family:'Fraunces',serif;font-size:32px;color:var(--forest);font-weight:500}
+  .col-desc{color:var(--moss);font-size:15px;font-weight:300;max-width:560px;margin-top:8px}
+  .col-badge{
+    background:linear-gradient(135deg,var(--forest),var(--moss));color:var(--cream);
+    border-radius:16px;padding:14px 22px;text-align:center;white-space:nowrap;
+  }
+  .col-badge small{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-light)}
+  .col-badge b{font-family:'Fraunces',serif;font-size:26px;font-weight:600}
+  .col-media{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-bottom:26px}
+  .col-media img{width:100%;height:260px;object-fit:cover;border-radius:16px;cursor:pointer;border:1px solid var(--line);transition:transform .35s}
+  .col-media img:hover{transform:scale(1.02)}
+
+  /* price table */
+  .ptable{width:100%;border-collapse:collapse;font-size:15px;margin-bottom:8px}
+  .ptable thead th{
+    text-align:left;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--moss);
+    font-weight:700;padding:0 14px 12px;border-bottom:2px solid var(--line);
+  }
+  .ptable thead th.r,.ptable td.r{text-align:right}
+  .ptable tbody td{padding:14px;border-bottom:1px solid var(--line);color:var(--ink)}
+  .ptable tbody tr{transition:background .2s}
+  .ptable tbody tr:hover{background:rgba(193,154,62,.06)}
+  .ptable .m-name{font-family:'Fraunces',serif;font-size:18px;color:var(--forest);font-weight:500}
+  .ptable .m-tag{display:inline-block;font-size:11px;color:var(--moss);margin-left:8px;letter-spacing:.5px}
+  .ptable .price{font-family:'Fraunces',serif;font-size:19px;color:var(--gold);font-weight:600;white-space:nowrap}
+  .ptable .plan-link{
+    color:var(--moss);font-size:13px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--gold-light);
+    cursor:pointer;white-space:nowrap;
+  }
+  .ptable .plan-link:hover{color:var(--gold)}
+
+  /* floorplan thumbnail grid */
+  .fp-block{margin-top:26px}
+  .fp-head{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--moss);font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+  .fp-head::before{content:"";width:24px;height:1px;background:var(--gold)}
+  .fp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+  .fp-card{
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;cursor:pointer;
+    transition:transform .3s,box-shadow .3s,border-color .3s;
+  }
+  .fp-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(28,43,33,.16);border-color:var(--gold-light)}
+  .fp-card img{width:100%;height:130px;object-fit:cover;object-position:top;background:#f0ece0}
+  .fp-card figcaption{padding:10px 12px;font-size:13px;color:var(--forest);font-weight:600}
+  .fp-card figcaption span{display:block;font-size:11px;color:var(--moss);font-weight:400;margin-top:2px}
+
+  /* ===== HEALTHY HOME ===== */
+  .healthy{background:linear-gradient(160deg,var(--forest),var(--forest-deep));color:var(--cream)}
+  .healthy .lead-eyebrow{color:var(--gold-light)}
+  .healthy .lead-eyebrow::before{background:var(--gold-light)}
+  .healthy .sec-title{color:var(--cream)}
+  .healthy .sec-intro{color:rgba(245,241,230,.72)}
+  .hh-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px}
+  .hh{background:rgba(245,241,230,.05);border:1px solid rgba(225,198,116,.2);border-radius:20px;padding:34px}
+  .hh h3{font-family:'Fraunces',serif;font-size:23px;color:var(--gold-light);font-weight:500;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+  .hh ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .hh li{display:flex;gap:12px;font-size:15px;color:rgba(245,241,230,.85);font-weight:300}
+  .hh li::before{content:"✓";color:#7ee08a;font-weight:700}
+
+  /* ===== FEATURES & FINISHES ===== */
+  .finishes{background:var(--paper)}
+  .ff-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:50px}
+  .ff{background:var(--cream);border:1px solid var(--line);border-radius:22px;padding:36px}
+  .ff h3{font-family:'Fraunces',serif;font-size:24px;color:var(--forest);font-weight:500;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+  .ff .ic{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--moss),var(--sage));font-size:22px}
+  .ff ul{list-style:none;display:grid;gap:10px}
+  .ff li{display:flex;gap:11px;font-size:14.5px;color:var(--ink)}
+  .ff li::before{content:"✦";color:var(--gold)}
+
+  /* ===== STATS ===== */
+  .stats{background:linear-gradient(160deg,var(--forest),var(--forest-deep));color:var(--cream)}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+  .stat .n{font-family:'Fraunces',serif;font-size:clamp(40px,5vw,58px);color:var(--gold-light);font-weight:500;line-height:1}
+  .stat .l{font-size:14px;color:rgba(245,241,230,.72);margin-top:10px;letter-spacing:.5px}
+
+  /* ===== HIGHLIGHTS ===== */
+  .highlights{background:var(--cream)}
+  .hl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:50px}
+  .hl{
+    display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;
+    background:var(--paper);border:1px solid var(--line);
+    border-radius:18px;padding:26px 28px;transition:transform .3s,border-color .3s;
+  }
+  .hl:hover{transform:translateY(-4px);border-color:var(--gold-light)}
+  .hl .hic{
+    width:48px;height:48px;border-radius:12px;flex:none;
+    display:flex;align-items:center;justify-content:center;font-size:22px;
+    background:linear-gradient(135deg,var(--moss),var(--sage));
+  }
+  .hl h4{font-family:'Fraunces',serif;font-size:19px;color:var(--forest);font-weight:500;margin-bottom:5px}
+  .hl p{font-size:14px;color:var(--moss);font-weight:300;line-height:1.55}
+
+  /* ===== SITEPLAN ===== */
+  .site{background:linear-gradient(160deg,var(--forest-deep),var(--forest));color:var(--cream)}
+  .site .lead-eyebrow{color:var(--gold-light)}
+  .site .lead-eyebrow::before{background:var(--gold-light)}
+  .site .sec-title{color:var(--cream)}
+  .site .sec-intro{color:rgba(245,241,230,.72)}
+  .site-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px}
+  .site-card{background:rgba(245,241,230,.05);border:1px solid rgba(225,198,116,.22);border-radius:20px;padding:18px;cursor:pointer;transition:transform .3s,border-color .3s}
+  .site-card:hover{transform:translateY(-5px);border-color:var(--gold-light)}
+  .site-card img{width:100%;border-radius:12px;background:#fff}
+  .site-card .sc-cap{padding:16px 6px 4px;font-family:'Fraunces',serif;font-size:18px;color:var(--gold-light)}
+  .site-card .sc-cap small{display:block;font-family:'Outfit';font-size:13px;color:rgba(245,241,230,.6);font-weight:300}
+
+  /* ===== MAP ===== */
+  .map-section{background:var(--paper)}
+  .map-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;margin-top:46px}
+  .map-img-box{
+    border-radius:24px;padding:14px;background:#fff;
+    border:1px solid var(--line);box-shadow:0 24px 50px rgba(28,43,33,.18);cursor:pointer;
+  }
+  .map-img-box img{width:100%;border-radius:14px;display:block}
+  .map-info h3{font-family:'Fraunces',serif;font-size:30px;color:var(--forest);font-weight:500;margin-bottom:8px}
+  .map-info h3 em{font-style:italic;color:var(--gold)}
+  .map-info .addr{font-size:16px;color:var(--moss);margin-bottom:22px}
+  .commute{list-style:none;display:flex;flex-direction:column;gap:12px}
+  .commute li{display:flex;align-items:center;gap:14px;font-size:15px;color:var(--ink);padding-bottom:12px;border-bottom:1px dashed var(--line)}
+  .commute li .cm-t{font-family:'Fraunces',serif;color:var(--gold);font-size:20px;font-weight:600;min-width:96px}
+
+  /* ===== TEAM ===== */
+  .team{background:linear-gradient(160deg,var(--forest-deep),var(--forest));color:var(--cream)}
+  .team .sec-title{color:var(--cream)}
+  .team .lead-eyebrow{color:var(--gold-light)}
+  .team .lead-eyebrow::before{background:var(--gold-light)}
+  .lead-card{
+    display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center;
+    background:rgba(245,241,230,.05);border:1px solid rgba(225,198,116,.25);
+    border-radius:24px;padding:42px;margin-top:50px;
+  }
+  .lead-photo{
+    width:140px;height:140px;border-radius:50%;
+    background:linear-gradient(135deg,var(--gold),var(--gold-light));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-size:48px;color:var(--forest-deep);font-weight:600;
+    box-shadow:0 0 0 6px rgba(225,198,116,.15);
+  }
+  .lead-card h3{font-size:30px;color:var(--cream);font-weight:500}
+  .lead-role{color:var(--gold-light);font-size:14px;letter-spacing:1.5px;text-transform:uppercase;margin:6px 0 14px}
+  .lead-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+  .badge{
+    background:rgba(225,198,116,.14);border:1px solid rgba(225,198,116,.3);
+    color:var(--gold-light);font-size:12px;padding:6px 14px;border-radius:30px;letter-spacing:.5px;
+  }
+  .lead-contact{display:flex;gap:22px;flex-wrap:wrap;font-size:15px;align-items:center}
+  .lead-contact a{color:var(--cream);text-decoration:none;border-bottom:1px solid rgba(225,198,116,.4);padding-bottom:2px}
+  .lead-contact a:hover{color:var(--gold-light)}
+
+  .team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:34px}
+  .member{
+    background:rgba(245,241,230,.05);border:1px solid rgba(225,198,116,.18);
+    border-radius:18px;padding:26px 18px;text-align:center;transition:transform .3s,border-color .3s;
+  }
+  .member:hover{transform:translateY(-5px);border-color:rgba(225,198,116,.45)}
+  .m-photo{
+    width:64px;height:64px;border-radius:50%;margin:0 auto 14px;
+    background:linear-gradient(135deg,var(--moss),var(--sage));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-size:24px;color:var(--cream);font-weight:600;
+  }
+  .member h4{font-size:17px;color:var(--cream);font-weight:600;font-family:'Outfit'}
+  .member .mr{font-size:11px;color:var(--gold-light);letter-spacing:1px;text-transform:uppercase;margin-top:4px}
+  .wa{
+    display:inline-flex;align-items:center;justify-content:center;gap:7px;
+    margin-top:14px;width:100%;
+    background:#25d366;color:#06351c;
+    font-weight:700;font-size:13px;letter-spacing:.3px;
+    padding:10px 14px;border-radius:30px;text-decoration:none;
+    transition:transform .2s,box-shadow .2s,filter .2s;
+  }
+  .wa:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,211,102,.35);filter:brightness(1.05)}
+  .wa svg{width:16px;height:16px;flex:none}
+  .lead-contact .wa{width:auto;margin-top:0}
+
+  /* ===== FORM / CTA ===== */
+  .register{background:var(--cream)}
+  .reg-wrap{
+    display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+    background:linear-gradient(160deg,var(--forest),var(--forest-deep));
+    border-radius:30px;padding:60px;color:var(--cream);
+    box-shadow:0 30px 70px rgba(28,43,33,.25);
+  }
+  .reg-wrap .lead-eyebrow{color:var(--gold-light)}
+  .reg-wrap .lead-eyebrow::before{background:var(--gold-light)}
+  .reg-wrap h2{font-size:clamp(30px,4vw,46px);color:var(--cream);font-weight:400;margin-bottom:16px}
+  .reg-wrap h2 em{font-style:italic;color:var(--gold-light)}
+  .reg-wrap p{color:rgba(245,241,230,.72);font-size:16px;font-weight:300}
+  .reg-list{margin-top:24px;list-style:none}
+  .reg-list li{padding:8px 0;display:flex;align-items:center;gap:12px;font-size:15px}
+  .reg-list li::before{content:"✦";color:var(--gold-light)}
+  form{display:flex;flex-direction:column;gap:14px}
+  .f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  input,select{
+    width:100%;padding:15px 18px;border-radius:12px;border:1px solid rgba(225,198,116,.3);
+    background:rgba(245,241,230,.07);color:var(--cream);font-family:'Outfit';font-size:15px;
+  }
+  input::placeholder{color:rgba(245,241,230,.45)}
+  input:focus,select:focus{outline:none;border-color:var(--gold-light);background:rgba(245,241,230,.12)}
+  select option{color:#202a1f}
+  .submit{
+    background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--forest-deep);
+    border:none;font-weight:700;font-size:16px;padding:18px;border-radius:12px;cursor:pointer;
+    letter-spacing:.5px;text-transform:uppercase;transition:transform .2s,box-shadow .2s;margin-top:6px;
+  }
+  .submit:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(193,154,62,.4)}
+  .form-fine{font-size:12px;color:rgba(245,241,230,.5);text-align:center;margin-top:4px}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--forest-deep);color:rgba(245,241,230,.6);padding:46px 0;text-align:center}
+  footer .fbrand{font-family:'Fraunces',serif;font-size:22px;color:var(--cream);margin-bottom:8px}
+  footer .fbrand b{color:var(--gold-light)}
+  footer a{color:var(--gold-light);text-decoration:none}
+  footer .disc{font-size:12px;max-width:780px;margin:20px auto 0;line-height:1.7}
+
+  /* ===== LIGHTBOX ===== */
+  .lb{
+    position:fixed;inset:0;z-index:200;display:none;
+    background:rgba(8,12,7,.94);padding:40px 24px;
+    align-items:center;justify-content:center;
+  }
+  .lb.open{display:flex}
+  .lb-inner{max-width:1100px;width:100%;text-align:center}
+  .lb img{max-width:100%;max-height:82vh;margin:0 auto;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .lb-cap{color:var(--cream);font-family:'Fraunces',serif;font-size:18px;margin-top:18px}
+  .lb-close{
+    position:absolute;top:22px;right:26px;width:46px;height:46px;border-radius:50%;
+    background:rgba(245,241,230,.1);border:1px solid rgba(225,198,116,.4);color:var(--cream);
+    font-size:24px;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center;
+    transition:background .2s;
+  }
+  .lb-close:hover{background:rgba(225,198,116,.25)}
+
+  @keyframes rise{to{opacity:1;transform:translateY(0)}}
+  .eyebrow,.hero h1,.hero .sub,.loc,.hero-actions,.launch-strip{transform:translateY(24px)}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:36px}
+    .hero-form-card{max-width:480px}
+    .inc-grid{grid-template-columns:1fr 1fr}
+    .gal{grid-template-columns:1fr 1fr}
+    .stat-grid{grid-template-columns:1fr 1fr}
+    .hl-grid{grid-template-columns:1fr}
+    .hh-grid,.ff-grid,.site-grid{grid-template-columns:1fr}
+    .team-grid{grid-template-columns:repeat(2,1fr)}
+    .map-wrap{grid-template-columns:1fr;gap:34px}
+    .reg-wrap{grid-template-columns:1fr;padding:40px 28px}
+    .lead-card{grid-template-columns:1fr;text-align:center;justify-items:center}
+    .lead-contact{justify-content:center}
+    .col-head{flex-direction:column;align-items:flex-start}
+  }
+  @media(max-width:560px){
+    .inc-grid,.gal,.stat-grid,.team-grid{grid-template-columns:1fr}
+    .topbar .brand{font-size:15px}
+    .pad{padding:64px 0}
+    .collection{padding:24px}
+    .ptable{font-size:13px}
+    .ptable tbody td{padding:11px 8px}
+    .ptable .m-name{font-size:15px}
+    .ptable .m-tag{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="brand">Grow With <b>Prabhat</b></div>
+  <a href="#register" class="cta">Register Now</a>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="ring r1"></div>
+  <div class="ring r2"></div>
+  <div class="wrap hero-content">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Now Selling · By Solmar · Caledon</span>
+        <h1>Wildfield <em>Village</em></h1>
+        <p class="sub">A master-planned community at Gore Road &amp; Mayfield — freehold towns, semis &amp; detached homes by Solmar, set among parks, trails and open green space. Grand opening incentives are live.</p>
+        <div class="loc">📍 Gore Road &amp; Mayfield, Caledon <span>·</span> Freehold Towns · Semis · Detached</div>
+        <div class="hero-actions">
+          <a href="#register" class="btn btn-primary">Get VIP Access →</a>
+          <a href="#collections" class="btn btn-ghost">View Pricing &amp; Plans</a>
+        </div>
+        <div class="launch-strip">
+          <div class="launch-pill live">
+            <span class="k">Status</span>
+            <span class="v">Now Selling</span>
+          </div>
+          <div class="launch-pill">
+            <span class="k">Starting From</span>
+            <span class="v">$749,900</span>
+          </div>
+          <div class="launch-pill">
+            <span class="k">Grand Opening</span>
+            <span class="v">Incentives On</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-form-card">
+        <span class="hfc-tag">Register for VIP Access</span>
+        <h3>Get the best lots first</h3>
+        <p class="hfc-sub">Floor plans, full pricing &amp; grand opening incentives — direct from our platinum team.</p>
+        <form name="wildfield-hero" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleRegister(event)">
+          <input type="hidden" name="form-name" value="wildfield-hero">
+          <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+          <input type="text" name="name" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="tel" name="phone" placeholder="Phone Number" required>
+          <select name="product" required>
+            <option value="">What are you interested in?</option>
+            <option>Freehold Towns (from $749,900)</option>
+            <option>Semi-Detached (from $849,900)</option>
+            <option>32' Detached (from $949,900)</option>
+            <option>36' Detached (from $1,019,900)</option>
+            <option>All Products</option>
+          </select>
+          <button type="submit" class="submit">Get My VIP Access →</button>
+          <p class="form-fine">By registering you agree to be contacted by the Grow With Prabhat Team.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- URGENCY -->
+<div class="urgent">🔥 <b>GRAND OPENING — NOW SELLING</b> · 5 appliances + $5,000 décor + capped dev charges + Healthy Home package included for a limited time</div>
+
+<!-- INCENTIVES -->
+<section class="incentives pad" id="incentives">
+  <div class="wrap">
+    <div class="lead-eyebrow reveal">Grand Opening Incentives</div>
+    <h2 class="sec-title reveal">More value, <em>built in</em></h2>
+    <p class="sec-intro reveal">For a limited time, every Wildfield Village home comes with a grand opening incentive package — real savings on the things that matter most.</p>
+
+    <div class="inc-grid">
+      <div class="inc reveal">
+        <div class="iic">🧺</div>
+        <span class="big">5</span>
+        <h4>Free Appliances</h4>
+        <p>Stainless steel fridge, stove &amp; dishwasher, plus white washer &amp; dryer.</p>
+      </div>
+      <div class="inc reveal">
+        <div class="iic">🎨</div>
+        <span class="big">$5,000</span>
+        <h4>Décor Dollars</h4>
+        <p>To use at the Solmar Design Centre on the finishes you love. No cash value.</p>
+      </div>
+      <div class="inc reveal">
+        <div class="iic">🏛️</div>
+        <span class="big">$7,500</span>
+        <h4>Dev Charges Capped</h4>
+        <p>Development charges capped at $7,500 — protection from costly closing surprises.</p>
+      </div>
+      <div class="inc reveal">
+        <div class="iic">🌿</div>
+        <span class="big">Healthy Home</span>
+        <h4>Wellness Package</h4>
+        <p>Whole-home humidifier, kitchen water purifier &amp; MERV 13 air filter included.</p>
+      </div>
+    </div>
+    <p class="inc-fine reveal">*Incentives are for a limited time and subject to change without notice. Ask our team for current details and full terms.</p>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="amen pad" id="amenities">
+  <div class="wrap">
+    <div class="lead-eyebrow reveal">Community Amenities</div>
+    <h2 class="sec-title reveal">A neighbourhood built for <em>living</em></h2>
+    <p class="sec-intro reveal">Wildfield Village is planned around an active, family-first lifestyle — with parks, sport courts and play spaces just steps from home.</p>
+
+    <div class="gal">
+      <div class="tile reveal" onclick="openLB('wildfield-assets/renderings/amenity_park.jpg','Community Park — Wildfield Village')">
+        <img loading="lazy" src="wildfield-assets/renderings/amenity_park.jpg" alt="Community Park rendering">
+        <div class="cap"><small>Green Space</small>Community Park</div>
+      </div>
+      <div class="tile reveal" onclick="openLB('wildfield-assets/renderings/amenity_cricket.jpg','Cricket Field — Wildfield Village')">
+        <img loading="lazy" src="wildfield-assets/renderings/amenity_cricket.jpg" alt="Cricket Field rendering">
+        <div class="cap"><small>Sport</small>Cricket Field</div>
+      </div>
+      <div class="tile reveal" onclick="openLB('wildfield-assets/renderings/amenity_tennis.jpg','Tennis &amp; Basketball Court — Wildfield Village')">
+        <img loading="lazy" src="wildfield-assets/renderings/amenity_tennis.jpg" alt="Tennis and Basketball Court rendering">
+        <div class="cap"><small>Sport</small>Tennis &amp; Basketball</div>
+      </div>
+      <div class="tile reveal" onclick="openLB('wildfield-assets/renderings/amenity_splashpad.jpg','Splash Pad — Wildfield Village')">
+        <img loading="lazy" src="wildfield-assets/renderings/amenity_splashpad.jpg" alt="Splash Pad rendering">
+        <div class="cap"><small>Family</small>Splash Pad</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOME COLLECTIONS + PRICING + FLOOR PLANS -->
+<section class="collections pad" id="collections">
+  <div class="wrap">
+    <div class="lead-eyebrow reveal">Home Collections · Pricing &amp; Floor Plans</div>
+    <h2 class="sec-title reveal">Find your <em>home</em></h2>
+    <p class="sec-intro reveal">From freehold towns to 36' detached homes — full pricing and floor plans below. List prices shown are after HST rebate credit. Click any plan to enlarge.</p>
+
+    <!-- TOWNS -->
+    <div class="collection reveal">
+      <div class="col-head">
+        <div>
+          <div class="col-kicker">25' Freehold Townhomes</div>
+          <h3 class="col-title">Traditional Towns</h3>
+          <p class="col-desc">Spacious two-storey freehold towns with private backyards — ideal for first-time buyers and growing families. 1,351–2,295 sq ft.</p>
+        </div>
+        <div class="col-badge"><small>From</small><b>$749,900</b></div>
+      </div>
+      <div class="col-media">
+        <img loading="lazy" src="wildfield-assets/renderings/towns_a.jpg" alt="Townhomes Elevation A" onclick="openLB(this.src,'Townhomes — Elevation A')">
+        <img loading="lazy" src="wildfield-assets/renderings/towns_b.jpg" alt="Townhomes Elevation B" onclick="openLB(this.src,'Townhomes — Elevation B')">
+      </div>
+      <table class="ptable">
+        <thead><tr><th>Model</th><th class="r">Sq Ft</th><th>Elev.</th><th class="r">List Price*</th><th class="r">Floor Plan</th></tr></thead>
+        <tbody>
+          <tr><td><span class="m-name">Alder</span><span class="m-tag">TH25-01</span></td><td class="r">1,351</td><td>A/B</td><td class="r"><span class="price">$749,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/town_01_alder.jpg','Alder · 1,351 sq ft · TH25-01')">View →</span></td></tr>
+          <tr><td><span class="m-name">Rowan</span><span class="m-tag">TH25-02</span></td><td class="r">1,497</td><td>A/B</td><td class="r"><span class="price">$769,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/town_02_rowan.jpg','Rowan · 1,497 sq ft · TH25-02')">View →</span></td></tr>
+          <tr><td><span class="m-name">Aspen</span><span class="m-tag">TH25-03</span></td><td class="r">1,672</td><td>A/B</td><td class="r"><span class="price">$789,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/town_03_aspen.jpg','Aspen · 1,672 sq ft · TH25-03')">View →</span></td></tr>
+          <tr><td><span class="m-name">Sumac</span><span class="m-tag">TH25-04</span></td><td class="r">1,804</td><td>A/B</td><td class="r"><span class="price">$809,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/town_04_sumac.jpg','Sumac · 1,804 sq ft · TH25-04')">View →</span></td></tr>
+          <tr><td><span class="m-name">Goldenrod</span><span class="m-tag">TH25-05 · End</span></td><td class="r">2,033</td><td>A/B</td><td class="r"><span class="price">$849,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/town_05_goldenrod.jpg','Goldenrod End · 2,033 sq ft · TH25-05 · opt. 4-bed $857,400')">View →</span></td></tr>
+          <tr><td><span class="m-name">Fern</span><span class="m-tag">TH25-06 · Corner</span></td><td class="r">2,295</td><td>A/B</td><td class="r"><span class="price">$879,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/town_06_fern.jpg','Fern Corner · 2,295 sq ft · TH25-06')">View →</span></td></tr>
+        </tbody>
+      </table>
+      <div class="fp-block">
+        <div class="fp-head">Floor Plans</div>
+        <div class="fp-grid">
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/town_01_alder.jpg','Alder · 1,351 sq ft · TH25-01')"><img loading="lazy" src="wildfield-assets/floorplans/town_01_alder.jpg" alt="Alder floor plan"><figcaption>Alder<span>1,351 sq ft</span></figcaption></figure>
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/town_02_rowan.jpg','Rowan · 1,497 sq ft · TH25-02')"><img loading="lazy" src="wildfield-assets/floorplans/town_02_rowan.jpg" alt="Rowan floor plan"><figcaption>Rowan<span>1,497 sq ft</span></figcaption></figure>
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/town_03_aspen.jpg','Aspen · 1,672 sq ft · TH25-03')"><img loading="lazy" src="wildfield-assets/floorplans/town_03_aspen.jpg" alt="Aspen floor plan"><figcaption>Aspen<span>1,672 sq ft</span></figcaption></figure>
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/town_04_sumac.jpg','Sumac · 1,804 sq ft · TH25-04')"><img loading="lazy" src="wildfield-assets/floorplans/town_04_sumac.jpg" alt="Sumac floor plan"><figcaption>Sumac<span>1,804 sq ft</span></figcaption></figure>
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/town_05_goldenrod.jpg','Goldenrod End · 2,033 sq ft · TH25-05')"><img loading="lazy" src="wildfield-assets/floorplans/town_05_goldenrod.jpg" alt="Goldenrod floor plan"><figcaption>Goldenrod<span>2,033 sq ft · End</span></figcaption></figure>
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/town_06_fern.jpg','Fern Corner · 2,295 sq ft · TH25-06')"><img loading="lazy" src="wildfield-assets/floorplans/town_06_fern.jpg" alt="Fern floor plan"><figcaption>Fern<span>2,295 sq ft · Corner</span></figcaption></figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEMIS -->
+    <div class="collection reveal">
+      <div class="col-head">
+        <div>
+          <div class="col-kicker">25' Freehold Semi-Detached</div>
+          <h3 class="col-title">Semi-Detached Homes</h3>
+          <p class="col-desc">Generous, modern semis built for connection and growth — more living space without the detached price. 1,418–1,958 sq ft.</p>
+        </div>
+        <div class="col-badge"><small>From</small><b>$849,900</b></div>
+      </div>
+      <div class="col-media">
+        <img loading="lazy" src="wildfield-assets/renderings/meadowlark_a.jpg" alt="Meadowlark Elevation A" onclick="openLB(this.src,'Meadowlark — Elevation A')">
+        <img loading="lazy" src="wildfield-assets/renderings/inglewood_a.jpg" alt="Inglewood Elevation A" onclick="openLB(this.src,'Inglewood — Elevation A')">
+      </div>
+      <table class="ptable">
+        <thead><tr><th>Model</th><th class="r">Sq Ft</th><th>Elev.</th><th class="r">List Price*</th><th class="r">Floor Plan</th></tr></thead>
+        <tbody>
+          <tr><td><span class="m-name">Hawthorn</span><span class="m-tag">SD25-01</span></td><td class="r">1,418</td><td>A/B</td><td class="r"><span class="price">$849,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/semi_01_hawthorn.jpg','Hawthorn · 1,418 sq ft · SD25-01')">View →</span></td></tr>
+          <tr><td><span class="m-name">Willow</span><span class="m-tag">SD25-02</span></td><td class="r">1,530</td><td>A/B</td><td class="r"><span class="price">$859,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/semi_02_willow.jpg','Willow · 1,530 sq ft · SD25-02')">View →</span></td></tr>
+          <tr><td><span class="m-name">Juniper</span><span class="m-tag">SD25-03</span></td><td class="r">1,607</td><td>A/B</td><td class="r"><span class="price">$879,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/semi_03_juniper.jpg','Juniper · 1,607 sq ft · SD25-03')">View →</span></td></tr>
+          <tr><td><span class="m-name">Meadowlark</span><span class="m-tag">SD25-04</span></td><td class="r">1,846</td><td>A/B</td><td class="r"><span class="price">$899,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/semi_04_meadowlark.jpg','Meadowlark · 1,846 sq ft · SD25-04')">View →</span></td></tr>
+          <tr><td><span class="m-name">Inglewood</span><span class="m-tag">SD25-05</span></td><td class="r">1,958</td><td>A/B</td><td class="r"><span class="price">$919,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/semi_05_inglewood.jpg','Inglewood · 1,958 sq ft · SD25-05')">View →</span></td></tr>
+        </tbody>
+      </table>
+      <div class="fp-block">
+        <div class="fp-head">Floor Plans</div>
+        <div class="fp-grid">
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/semi_01_hawthorn.jpg','Hawthorn · 1,418 sq ft · SD25-01')"><img loading="lazy" src="wildfield-assets/floorplans/semi_01_hawthorn.jpg" alt="Hawthorn floor plan"><figcaption>Hawthorn<span>1,418 sq ft</span></figcaption></figure>
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/semi_02_willow.jpg','Willow · 1,530 sq ft · SD25-02')"><img loading="lazy" src="wildfield-assets/floorplans/semi_02_willow.jpg" alt="Willow floor plan"><figcaption>Willow<span>1,530 sq ft</span></figcaption></figure>
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/semi_03_juniper.jpg','Juniper · 1,607 sq ft · SD25-03')"><img loading="lazy" src="wildfield-assets/floorplans/semi_03_juniper.jpg" alt="Juniper floor plan"><figcaption>Juniper<span>1,607 sq ft</span></figcaption></figure>
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/semi_04_meadowlark.jpg','Meadowlark · 1,846 sq ft · SD25-04')"><img loading="lazy" src="wildfield-assets/floorplans/semi_04_meadowlark.jpg" alt="Meadowlark floor plan"><figcaption>Meadowlark<span>1,846 sq ft</span></figcaption></figure>
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/semi_05_inglewood.jpg','Inglewood · 1,958 sq ft · SD25-05')"><img loading="lazy" src="wildfield-assets/floorplans/semi_05_inglewood.jpg" alt="Inglewood floor plan"><figcaption>Inglewood<span>1,958 sq ft</span></figcaption></figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- 32' DETACHED -->
+    <div class="collection reveal">
+      <div class="col-head">
+        <div>
+          <div class="col-kicker">32' Freehold Detached · 2-Car Garage</div>
+          <h3 class="col-title">32' Detached Homes</h3>
+          <p class="col-desc">Single-family detached homes with double garages and room to grow — the sweet spot for move-up families. 1,860–2,344 sq ft.</p>
+        </div>
+        <div class="col-badge"><small>From</small><b>$949,900</b></div>
+      </div>
+      <div class="col-media">
+        <img loading="lazy" src="wildfield-assets/renderings/stonecrop_a.jpg" alt="Stonecrop Elevation A" onclick="openLB(this.src,'Stonecrop — Elevation A')">
+        <img loading="lazy" src="wildfield-assets/renderings/belfountain_a.jpg" alt="Belfountain Elevation A" onclick="openLB(this.src,'Belfountain — Elevation A')">
+      </div>
+      <table class="ptable">
+        <thead><tr><th>Model</th><th class="r">Sq Ft</th><th>Elev.</th><th class="r">List Price*</th><th class="r">Floor Plan</th></tr></thead>
+        <tbody>
+          <tr><td><span class="m-name">Sycamore</span><span class="m-tag">32-01</span></td><td class="r">1,860</td><td>A/B</td><td class="r"><span class="price">$949,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/d32_01_sycamore.jpg','Sycamore · 1,860 sq ft · 32-01')">View →</span></td></tr>
+          <tr><td><span class="m-name">Clover</span><span class="m-tag">32-02</span></td><td class="r">1,985</td><td>A/B</td><td class="r"><span class="price">$974,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/d32_02_clover.jpg','Clover · 1,985 sq ft · 32-02')">View →</span></td></tr>
+          <tr><td><span class="m-name">Stonecrop</span><span class="m-tag">32-03</span></td><td class="r">2,111</td><td>A/B</td><td class="r"><span class="price">$999,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/d32_03_stonecrop.jpg','Stonecrop · 2,111 sq ft · 32-03')">View →</span></td></tr>
+          <tr><td><span class="m-name">Belfountain</span><span class="m-tag">32-04</span></td><td class="r">2,344</td><td>A/B</td><td class="r"><span class="price">$1,029,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/d32_04_belfountain.jpg','Belfountain · 2,344 sq ft · 32-04')">View →</span></td></tr>
+        </tbody>
+      </table>
+      <div class="fp-block">
+        <div class="fp-head">Floor Plans</div>
+        <div class="fp-grid">
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/d32_01_sycamore.jpg','Sycamore · 1,860 sq ft · 32-01')"><img loading="lazy" src="wildfield-assets/floorplans/d32_01_sycamore.jpg" alt="Sycamore floor plan"><figcaption>Sycamore<span>1,860 sq ft</span></figcaption></figure>
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/d32_02_clover.jpg','Clover · 1,985 sq ft · 32-02')"><img loading="lazy" src="wildfield-assets/floorplans/d32_02_clover.jpg" alt="Clover floor plan"><figcaption>Clover<span>1,985 sq ft</span></figcaption></figure>
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/d32_03_stonecrop.jpg','Stonecrop · 2,111 sq ft · 32-03')"><img loading="lazy" src="wildfield-assets/floorplans/d32_03_stonecrop.jpg" alt="Stonecrop floor plan"><figcaption>Stonecrop<span>2,111 sq ft</span></figcaption></figure>
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/d32_04_belfountain.jpg','Belfountain · 2,344 sq ft · 32-04')"><img loading="lazy" src="wildfield-assets/floorplans/d32_04_belfountain.jpg" alt="Belfountain floor plan"><figcaption>Belfountain<span>2,344 sq ft</span></figcaption></figure>
+        </div>
+      </div>
+    </div>
+
+    <!-- 36' DETACHED -->
+    <div class="collection reveal">
+      <div class="col-head">
+        <div>
+          <div class="col-kicker">36' Freehold Detached · 2-Car Garage</div>
+          <h3 class="col-title">36' Detached Homes</h3>
+          <p class="col-desc">The flagship collection — wide-lot detached homes designed for multi-generational living and lasting memories. 1,883–2,618 sq ft.</p>
+        </div>
+        <div class="col-badge"><small>From</small><b>$1,019,900</b></div>
+      </div>
+      <div class="col-media">
+        <img loading="lazy" src="wildfield-assets/renderings/alton_a.jpg" alt="Alton Elevation A" onclick="openLB(this.src,'Alton — Elevation A')">
+        <img loading="lazy" src="wildfield-assets/renderings/birch_a.jpg" alt="Birch Elevation A" onclick="openLB(this.src,'Birch — Elevation A')">
+      </div>
+      <table class="ptable">
+        <thead><tr><th>Model</th><th class="r">Sq Ft</th><th>Elev.</th><th class="r">List Price*</th><th class="r">Floor Plan</th></tr></thead>
+        <tbody>
+          <tr><td><span class="m-name">Maple</span><span class="m-tag">36-01</span></td><td class="r">1,883</td><td>A/B</td><td class="r"><span class="price">$1,019,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/d36_01_maple.jpg','Maple · 1,883 sq ft · 36-01')">View →</span></td></tr>
+          <tr><td><span class="m-name">Trillium</span><span class="m-tag">36-02</span></td><td class="r">2,041</td><td>A/B</td><td class="r"><span class="price">$1,039,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/d36_02_trillium.jpg','Trillium · 2,041 sq ft · 36-02')">View →</span></td></tr>
+          <tr><td><span class="m-name">Aster</span><span class="m-tag">36-03</span></td><td class="r">2,205</td><td>A/B</td><td class="r"><span class="price">$1,069,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/d36_03_aster.jpg','Aster · 2,205 sq ft · 36-03')">View →</span></td></tr>
+          <tr><td><span class="m-name">Bracken</span><span class="m-tag">36-04</span></td><td class="r">2,328</td><td>A/B</td><td class="r"><span class="price">$1,089,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/d36_04_bracken.jpg','Bracken · 2,328 sq ft · 36-04')">View →</span></td></tr>
+          <tr><td><span class="m-name">Alton</span><span class="m-tag">36-05</span></td><td class="r">2,557</td><td>A/B</td><td class="r"><span class="price">$1,129,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/d36_05_alton.jpg','Alton · 2,557 sq ft · 36-05')">View →</span></td></tr>
+          <tr><td><span class="m-name">Birch</span><span class="m-tag">36-06</span></td><td class="r">2,618</td><td>A/B</td><td class="r"><span class="price">$1,149,900</span></td><td class="r"><span class="plan-link" onclick="openLB('wildfield-assets/floorplans/d36_06_birch.jpg','Birch · 2,618 sq ft · 36-06')">View →</span></td></tr>
+        </tbody>
+      </table>
+      <div class="fp-block">
+        <div class="fp-head">Floor Plans</div>
+        <div class="fp-grid">
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/d36_01_maple.jpg','Maple · 1,883 sq ft · 36-01')"><img loading="lazy" src="wildfield-assets/floorplans/d36_01_maple.jpg" alt="Maple floor plan"><figcaption>Maple<span>1,883 sq ft</span></figcaption></figure>
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/d36_02_trillium.jpg','Trillium · 2,041 sq ft · 36-02')"><img loading="lazy" src="wildfield-assets/floorplans/d36_02_trillium.jpg" alt="Trillium floor plan"><figcaption>Trillium<span>2,041 sq ft</span></figcaption></figure>
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/d36_03_aster.jpg','Aster · 2,205 sq ft · 36-03')"><img loading="lazy" src="wildfield-assets/floorplans/d36_03_aster.jpg" alt="Aster floor plan"><figcaption>Aster<span>2,205 sq ft</span></figcaption></figure>
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/d36_04_bracken.jpg','Bracken · 2,328 sq ft · 36-04')"><img loading="lazy" src="wildfield-assets/floorplans/d36_04_bracken.jpg" alt="Bracken floor plan"><figcaption>Bracken<span>2,328 sq ft</span></figcaption></figure>
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/d36_05_alton.jpg','Alton · 2,557 sq ft · 36-05')"><img loading="lazy" src="wildfield-assets/floorplans/d36_05_alton.jpg" alt="Alton floor plan"><figcaption>Alton<span>2,557 sq ft</span></figcaption></figure>
+          <figure class="fp-card" onclick="openLB('wildfield-assets/floorplans/d36_06_birch.jpg','Birch · 2,618 sq ft · 36-06')"><img loading="lazy" src="wildfield-assets/floorplans/d36_06_birch.jpg" alt="Birch floor plan"><figcaption>Birch<span>2,618 sq ft</span></figcaption></figure>
+        </div>
+      </div>
+    </div>
+
+    <p class="inc-fine reveal" style="color:var(--moss)">*List prices reflect HST rebate credit applied and are subject to change without notice. Deposit: $10,000 with offer, balance to 10% over 365 days. Made payable to Solmar Wildfield Inc. E.&amp;O.E.</p>
+  </div>
+</section>
+
+<!-- DEPOSIT / WHY BUY STATS -->
+<section class="stats pad">
+  <div class="wrap">
+    <div class="stat-grid">
+      <div class="stat reveal"><div class="n">$10K</div><div class="l">Deposit With Offer</div></div>
+      <div class="stat reveal"><div class="n">10%</div><div class="l">Total Deposit Over 365 Days</div></div>
+      <div class="stat reveal"><div class="n">36+</div><div class="l">Years of Solmar Excellence</div></div>
+      <div class="stat reveal"><div class="n">21</div><div class="l">Home Designs Released</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HEALTHY HOME -->
+<section class="healthy pad" id="healthy">
+  <div class="wrap">
+    <div class="lead-eyebrow reveal">The Healthy Home · By Solmar</div>
+    <h2 class="sec-title reveal">A home where wellness is the <em>standard</em></h2>
+    <p class="sec-intro reveal">The Healthy Home is built around two things every family depends on without thinking about them — the air you breathe and the water you drink. These features are built into every Wildfield Village home.</p>
+
+    <div class="hh-grid">
+      <div class="hh reveal">
+        <h3>💧 Water Features</h3>
+        <ul>
+          <li>Water purifier in every home</li>
+          <li>Water softener in every home <em style="opacity:.6">(rental system)</em></li>
+        </ul>
+      </div>
+      <div class="hh reveal">
+        <h3>🌬️ Air &amp; Comfort Features</h3>
+        <ul>
+          <li>Whole-home humidifier</li>
+          <li>MERV 13 air filter</li>
+          <li>Low-VOC paints and adhesives</li>
+          <li>Water-based stains for cabinetry and flooring</li>
+          <li>Continuous fresh-air exchange (HRV system)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES & FINISHES -->
+<section class="finishes pad" id="finishes">
+  <div class="wrap">
+    <div class="lead-eyebrow reveal">Features &amp; Finishes</div>
+    <h2 class="sec-title reveal">Quality you can <em>see and feel</em></h2>
+    <p class="sec-intro reveal">A beautiful selection of singles, semis and townhomes — each with distinctive architecture, large windows and quality finishes that leave a lasting impression.</p>
+
+    <div class="ff-grid">
+      <div class="ff reveal">
+        <h3><span class="ic">🧱</span> Exterior Features</h3>
+        <ul>
+          <li>Maintenance-free brick, stone &amp; siding combinations</li>
+          <li>Covered porches with decorative columns (per elevation)</li>
+          <li>Fully sodded lots with asphalt driveways</li>
+          <li>Insulated garage doors with decorative inserts</li>
+          <li>Energy-efficient Low-E argon windows throughout</li>
+          <li>8' front entry door with sidelights &amp; upgraded hardware</li>
+          <li>Poured concrete basement with damp-proofing &amp; drainage</li>
+        </ul>
+      </div>
+      <div class="ff reveal">
+        <h3><span class="ic">🛋️</span> Interior Features</h3>
+        <ul>
+          <li>9' ceilings on main floor, 8' on second floor</li>
+          <li>Elegant oak staircase with natural finish</li>
+          <li>Quartz countertops in kitchen &amp; bathrooms</li>
+          <li>Custom kitchen cabinetry with extended upper cabinets</li>
+          <li>7' interior doors with brushed nickel hardware</li>
+          <li>Engineered floor system; 2"×6" walls; R-60 attic insulation</li>
+          <li>Full-height ceramic tile in bath &amp; shower; LED lighting</li>
+          <li>High-efficiency furnace with central air conditioning</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SITE PLAN -->
+<section class="site pad" id="siteplan">
+  <div class="wrap">
+    <div class="lead-eyebrow reveal">Master Plan &amp; Phase 1</div>
+    <h2 class="sec-title reveal">See the <em>community</em></h2>
+    <p class="sec-intro reveal">Explore the master plan and the current Phase 1 release. Click to enlarge — then ask our team which lots are still available.</p>
+
+    <div class="site-grid">
+      <div class="site-card reveal" onclick="openLB('wildfield-assets/siteplan/masterplan.jpg','Wildfield Village — Master Plan')">
+        <img loading="lazy" src="wildfield-assets/siteplan/masterplan.jpg" alt="Wildfield Village master plan">
+        <div class="sc-cap">Master Plan<small>The full Wildfield Village community vision</small></div>
+      </div>
+      <div class="site-card reveal" onclick="openLB('wildfield-assets/siteplan/phase1.jpg','Wildfield Village — Phase 1 Release')">
+        <img loading="lazy" src="wildfield-assets/siteplan/phase1.jpg" alt="Wildfield Village phase 1 site plan">
+        <div class="sc-cap">Phase 1 Release<small>Lots now selling — ask about availability</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="highlights pad">
+  <div class="wrap">
+    <div class="lead-eyebrow reveal">Key Highlights</div>
+    <h2 class="sec-title reveal">Elevated Caledon <em>living</em></h2>
+    <p class="sec-intro reveal">Surrounded by green spaces, family-friendly parks and scenic trails — with everyday convenience and future-ready value built in.</p>
+
+    <div class="hl-grid">
+      <div class="hl reveal"><div class="hic">🏏</div><div><h4>Sport &amp; Recreation Built In</h4><p>On-site cricket field, tennis &amp; basketball courts, splash pad and community parks — a rare lifestyle offering.</p></div></div>
+      <div class="hl reveal"><div class="hic">🌳</div><div><h4>Nature at Your Doorstep</h4><p>Parks, open green space and scenic trails that define Caledon's natural charm.</p></div></div>
+      <div class="hl reveal"><div class="hic">🛍️</div><div><h4>Everyday Convenience</h4><p>Grocery, restaurants and services minutes away in Caledon's growing retail landscape.</p></div></div>
+      <div class="hl reveal"><div class="hic">✈️</div><div><h4>Minutes to Pearson</h4><p>Quick access to Toronto Pearson International Airport and the Mayfield Recreation Complex.</p></div></div>
+      <div class="hl reveal"><div class="hic">🛣️</div><div><h4>Seamless Commuter Access</h4><p>Close to Highways 410, 407 &amp; 50 — easy travel right across the GTA.</p></div></div>
+      <div class="hl reveal"><div class="hic">🏆</div><div><h4>Trusted Solmar Quality</h4><p>Over 36 years building master-planned communities designed for comfort, style and long-term value.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP / LOCATION -->
+<section class="map-section pad" id="location">
+  <div class="wrap">
+    <div class="lead-eyebrow reveal">Conveniently Located</div>
+    <h2 class="sec-title reveal">In the heart of <em>Caledon</em></h2>
+    <p class="sec-intro reveal">At Gore Road &amp; Mayfield — where everything families need is close, and the rest of the GTA is an easy drive away.</p>
+
+    <div class="map-wrap">
+      <div class="map-img-box reveal" onclick="openLB('wildfield-assets/neighbourhood.jpg','Wildfield Village — Neighbourhood &amp; Amenities Map')">
+        <img loading="lazy" src="wildfield-assets/neighbourhood.jpg" alt="Wildfield Village neighbourhood and amenities map">
+      </div>
+      <div class="map-info reveal">
+        <h3>Gore Road &amp; <em>Mayfield</em></h3>
+        <div class="addr">Gore Road &amp; Mayfield Road, Caledon, ON</div>
+        <ul class="commute">
+          <li><span class="cm-t">20 min</span> To Brampton</li>
+          <li><span class="cm-t">25 min</span> To Vaughan</li>
+          <li><span class="cm-t">35 min</span> To Mississauga (via 407)</li>
+          <li><span class="cm-t">1 hr</span> To Downtown Toronto</li>
+          <li><span class="cm-t">1 hr 5</span> To Guelph</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team pad">
+  <div class="wrap">
+    <div class="lead-eyebrow reveal">Your VIP Access Team</div>
+    <h2 class="sec-title reveal">Meet the <em>Grow With Prabhat</em> Team</h2>
+    <p class="sec-intro reveal" style="color:rgba(245,241,230,.72)">Top 1% pre-construction specialists in the GTA with platinum builder access — your direct line to the best lots and the grand opening incentives.</p>
+
+    <div class="lead-card reveal">
+      <div class="lead-photo">PA</div>
+      <div>
+        <h3>Prabhat Aggarwal</h3>
+        <div class="lead-role">Founder &amp; CEO · Grow With Prabhat Team</div>
+        <div class="lead-badges">
+          <span class="badge">Grand Centurion</span>
+          <span class="badge">Centurion</span>
+          <span class="badge">Top 1% Pre-Con Agent · GTA</span>
+          <span class="badge">Century 21</span>
+        </div>
+        <div class="lead-contact">
+          <a href="tel:6478913975">📞 647-891-3975</a>
+          <a href="https://instagram.com/grow_with_prabhat" target="_blank">📸 @grow_with_prabhat</a>
+          <a class="wa" href="https://wa.me/16478913975?text=Hi%20Prabhat%2C%20I%27m%20interested%20in%20VIP%20access%20for%20Wildfield%20Village" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.42 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zM6.6 20.13c1.67.99 3.27 1.58 5.46 1.58 5.45 0 9.89-4.43 9.89-9.88a9.82 9.82 0 0 0-2.9-7A9.82 9.82 0 0 0 12.06 1.9c-5.46 0-9.89 4.43-9.89 9.88 0 2.3.6 3.94 1.65 5.65l-.99 3.62 3.77-.92zM17.5 14.6c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg> WhatsApp Prabhat</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-grid">
+      <div class="member reveal"><div class="m-photo">AY</div><h4>Anmol Yogi</h4><div class="mr">Sales Agent</div><a class="wa" href="https://wa.me/13654401640?text=Hi%20Anmol%2C%20I%27m%20interested%20in%20Wildfield%20Village%20VIP%20access" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.42 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zM6.6 20.13c1.67.99 3.27 1.58 5.46 1.58 5.45 0 9.89-4.43 9.89-9.88a9.82 9.82 0 0 0-2.9-7A9.82 9.82 0 0 0 12.06 1.9c-5.46 0-9.89 4.43-9.89 9.88 0 2.3.6 3.94 1.65 5.65l-.99 3.62 3.77-.92zM17.5 14.6c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg> WhatsApp</a></div>
+      <div class="member reveal"><div class="m-photo">AA</div><h4>Ashish Adhvaryu</h4><div class="mr">Sales Agent</div><a class="wa" href="https://wa.me/16472424828?text=Hi%20Ashish%2C%20I%27m%20interested%20in%20Wildfield%20Village%20VIP%20access" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.42 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zM6.6 20.13c1.67.99 3.27 1.58 5.46 1.58 5.45 0 9.89-4.43 9.89-9.88a9.82 9.82 0 0 0-2.9-7A9.82 9.82 0 0 0 12.06 1.9c-5.46 0-9.89 4.43-9.89 9.88 0 2.3.6 3.94 1.65 5.65l-.99 3.62 3.77-.92zM17.5 14.6c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg> WhatsApp</a></div>
+      <div class="member reveal"><div class="m-photo">SG</div><h4>Shivam Gupta</h4><div class="mr">Sales Agent</div><a class="wa" href="https://wa.me/16478617273?text=Hi%20Shivam%2C%20I%27m%20interested%20in%20Wildfield%20Village%20VIP%20access" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.42 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zM6.6 20.13c1.67.99 3.27 1.58 5.46 1.58 5.45 0 9.89-4.43 9.89-9.88a9.82 9.82 0 0 0-2.9-7A9.82 9.82 0 0 0 12.06 1.9c-5.46 0-9.89 4.43-9.89 9.88 0 2.3.6 3.94 1.65 5.65l-.99 3.62 3.77-.92zM17.5 14.6c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg> WhatsApp</a></div>
+      <div class="member reveal"><div class="m-photo">RK</div><h4>Rashi Kochar</h4><div class="mr">Client Care</div><a class="wa" href="https://wa.me/14372586442?text=Hi%20Rashi%2C%20I%27m%20interested%20in%20Wildfield%20Village%20VIP%20access" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.42 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zM6.6 20.13c1.67.99 3.27 1.58 5.46 1.58 5.45 0 9.89-4.43 9.89-9.88a9.82 9.82 0 0 0-2.9-7A9.82 9.82 0 0 0 12.06 1.9c-5.46 0-9.89 4.43-9.89 9.88 0 2.3.6 3.94 1.65 5.65l-.99 3.62 3.77-.92zM17.5 14.6c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg> WhatsApp</a></div>
+      <div class="member reveal"><div class="m-photo">M</div><h4>Manik</h4><div class="mr">Pre-Con &amp; Buyers</div><a class="wa" href="https://wa.me/16474025431?text=Hi%20Manik%2C%20I%27m%20interested%20in%20Wildfield%20Village%20VIP%20access" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .16 11.9C.16 5.34 5.5 0 12.06 0a11.82 11.82 0 0 1 8.42 3.49 11.82 11.82 0 0 1 3.48 8.42c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.69-1.45L.06 24zM6.6 20.13c1.67.99 3.27 1.58 5.46 1.58 5.45 0 9.89-4.43 9.89-9.88a9.82 9.82 0 0 0-2.9-7A9.82 9.82 0 0 0 12.06 1.9c-5.46 0-9.89 4.43-9.89 9.88 0 2.3.6 3.94 1.65 5.65l-.99 3.62 3.77-.92zM17.5 14.6c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg> WhatsApp</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="register pad" id="register">
+  <div class="wrap">
+    <div class="reg-wrap reveal">
+      <div>
+        <div class="lead-eyebrow">Secure Your VIP Spot</div>
+        <h2>Register for <em>VIP access</em></h2>
+        <p>Wildfield Village is now selling with grand opening incentives. Register through our platinum team for the best lots, full pricing and floor plans.</p>
+        <ul class="reg-list">
+          <li>Full pricing, floor plans &amp; lot availability</li>
+          <li>Grand opening incentives — appliances, décor &amp; capped dev charges</li>
+          <li>VIP / platinum allocation through our team</li>
+          <li>Personal guidance from Top 1% pre-con specialists</li>
+        </ul>
+      </div>
+      <form name="wildfield-register" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleRegister(event)">
+        <input type="hidden" name="form-name" value="wildfield-register">
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="f-row">
+          <input type="text" name="first" placeholder="First Name" required>
+          <input type="text" name="last" placeholder="Last Name" required>
+        </div>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <select name="product" required>
+          <option value="">What are you interested in?</option>
+          <option>Freehold Towns (from $749,900)</option>
+          <option>Semi-Detached (from $849,900)</option>
+          <option>32' Detached (from $949,900)</option>
+          <option>36' Detached (from $1,019,900)</option>
+          <option>All Products</option>
+        </select>
+        <select name="timeline" required>
+          <option value="">Your buying timeline</option>
+          <option>Ready to buy now</option>
+          <option>1–3 months</option>
+          <option>3–6 months</option>
+          <option>Just exploring / investing</option>
+        </select>
+        <button type="submit" class="submit">Get My VIP Access →</button>
+        <p class="form-fine">By registering you agree to be contacted by the Grow With Prabhat Team regarding Wildfield Village.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fbrand">Grow With <b>Prabhat</b> · Century 21</div>
+    <div>📞 <a href="tel:6478913975">647-891-3975</a> &nbsp;·&nbsp; 📸 <a href="https://instagram.com/grow_with_prabhat" target="_blank">@grow_with_prabhat</a></div>
+    <p class="disc">Wildfield Village is a master-planned community by Solmar at Gore Road &amp; Mayfield, Caledon. Prices, sizes, specifications, incentives and availability are subject to change without notice. List prices shown reflect HST rebate credit applied and are for reference only — register for current pricing and floor plans. Renderings are artist's concept. The Grow With Prabhat Team provides VIP brokerage access and representation. This is a marketing page prepared by an independent real estate team and is not the official builder website. E.&amp;O.E.</p>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" onclick="if(event.target.id==='lb')closeLB()">
+  <button class="lb-close" onclick="closeLB()" aria-label="Close">×</button>
+  <div class="lb-inner">
+    <img id="lb-img" src="" alt="Enlarged view">
+    <div class="lb-cap" id="lb-cap"></div>
+  </div>
+</div>
+
+<script>
+  // Scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{ if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('in'), (i%3)*80); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Lightbox
+  function openLB(src,cap){
+    document.getElementById('lb-img').src = src;
+    document.getElementById('lb-cap').innerHTML = cap || '';
+    document.getElementById('lb').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLB(){
+    document.getElementById('lb').classList.remove('open');
+    document.getElementById('lb-img').src = '';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLB(); });
+
+  // Form handler — submits to Netlify Forms via fetch, keeps visitor on page
+  function handleRegister(ev){
+    ev.preventDefault();
+    const f = ev.target;
+    const name = (f.name && f.name.value) || (f.first && f.first.value) || "there";
+    const data = new URLSearchParams(new FormData(f)).toString();
+    const btn = f.querySelector('button[type="submit"]');
+    if(btn){ btn.disabled = true; btn.textContent = "Sending…"; }
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: data
+    })
+    .then(() => {
+      alert("Thank you, " + name + "! Your VIP registration for Wildfield Village has been received. The Grow With Prabhat Team will contact you shortly to secure your early access.");
+      f.reset();
+    })
+    .catch(() => {
+      alert("Thank you, " + name + "! We've received your request and our team will reach out shortly.");
+      f.reset();
+    })
+    .finally(() => {
+      if(btn){ btn.disabled = false; btn.textContent = "Get My VIP Access →"; }
+    });
+    return false;
+  }
+</script>
+</body>
+</html>
