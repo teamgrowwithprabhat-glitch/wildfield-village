@@ -88,7 +88,7 @@ exports.handler = async (event) => {
   const person = {
     firstName,
     lastName,
-    tags: ['Wildfield Village Lead', d.product, d.timeline].filter(Boolean),
+    tags: ['Wildfield Village Lead', d.lead_source, d.product, d.timeline].filter(Boolean),
   };
   if (d.email) person.emails = [{ value: d.email, type: 'home' }];
   if (d.phone) person.phones = [{ value: d.phone, type: 'mobile' }];
@@ -99,10 +99,14 @@ exports.handler = async (event) => {
     line('Project', 'Wildfield Village by Solmar (Gore & Mayfield, Caledon)') +
     line('Interested in', d.product) +
     line('Buying timeline', d.timeline) +
-    line('Form', formName === 'wildfield-hero' ? 'Hero quick-register' : 'Full registration');
+    line('Lead source', d.lead_source) +
+    line('Campaign', d.utm_campaign) +
+    line('Ad source / medium', [d.utm_source, d.utm_medium].filter(Boolean).join(' / ')) +
+    line('Ad content', d.utm_content) +
+    line('Form', formName);
 
   const eventBody = {
-    source: 'Wildfield Village Landing Page',
+    source: d.lead_source || 'Wildfield Village Landing Page',
     system: SYSTEM,
     type: 'Registration',
     message: 'New Wildfield Village VIP registration',
